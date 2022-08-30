@@ -1,7 +1,6 @@
 import React from "react";
 import Profile from "/Users/nasanbatg/Desktop/disk/curriculum/level2-curriculum-react/hello-react/src/assets/icon/Profile.svg";
 export const ReadComment = ({ comments, index, allComment, setAllCommnet }) => {
-  console.log(index);
   const Delete = () => {
     const deleteComment = allComment;
     allComment = deleteComment.filter((_el, ind) => ind !== index);

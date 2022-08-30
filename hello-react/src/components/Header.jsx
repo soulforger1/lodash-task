@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/icon/team..svg";
-
 export const Header = () => {
   return (
     <div className="d-flex justify-content-between align-items-center pt-3">
@@ -9,8 +8,8 @@ export const Header = () => {
         <img src={logo} alt="" />
       </Link>
       <div className="d-flex gap-4  align-items-center">
-        <Link to="/Products" className="text-muted">
-          Products
+        <Link to="/" className="text-muted">
+          Home
         </Link>
         <Link to="/Blog" className="text-muted">
           Blog

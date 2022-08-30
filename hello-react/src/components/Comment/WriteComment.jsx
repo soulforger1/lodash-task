@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ReadComment } from "./index";
 import Profile from "/Users/nasanbatg/Desktop/disk/curriculum/level2-curriculum-react/hello-react/src/assets/icon/Profile.svg";
 

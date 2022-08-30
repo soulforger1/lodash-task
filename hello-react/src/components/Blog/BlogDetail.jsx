@@ -1,13 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { MockData, Header, WriteComment } from "../index";
-
+import {  WriteComment } from "../index";
+import MockData from "../MOCK_DATA.json";
 export const BlogDetail = () => {
   let { id } = useParams();
   const data = MockData[id];
   return (
     <div>
-      <Header />
       <div className="w-100 d-flex flex-column align-items-center my-5  gap-5 ">
         <div className="fs-1 fw-bold text-start ">{data.title}</div>
         <div class="card-body d-flex align-items-center gap-3">

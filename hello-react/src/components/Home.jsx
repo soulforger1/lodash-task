@@ -1,10 +1,9 @@
 import React from "react";
 
-export const LogIn = () => {
+export const Home = () => {
   return (
     <div>
-     
-      LogIn page
+      Home page
     </div>
   );
 };
