@@ -14,7 +14,6 @@ export const WriteComment = () => {
     }
   };
 
-
   return (
     <div className="">
       {allComment.map((comment, index) => {
@@ -30,11 +29,16 @@ export const WriteComment = () => {
       })}
       <div className="text-muted h4">Join the conversation</div>
       <div className="d-flex align-items-center gap-3 mt-4">
-        <img src={Profile} width="56" class="rounded-circle" alt="Profile" />
+        <img
+          src={Profile}
+          width="56"
+          className="rounded-circle"
+          alt="Profile"
+        />
         <textarea
           type="text"
-          class="form-control"
-          style={{ width: "800px" , height:"100px" }}
+          className="form-control"
+          style={{ width: "800px", height: "100px" }}
           placeholder="Enter Comment"
           value={comment}
           onChange={(e) => setComment(e.target.value)}

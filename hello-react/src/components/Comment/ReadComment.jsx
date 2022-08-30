@@ -10,7 +10,12 @@ export const ReadComment = ({ comments, index, allComment, setAllCommnet }) => {
     <div>
       <div className="d-flex align-items-center justify-content-between px-2 gap-3 my-2 ml-4   border-bottom w-100 py-3">
         <div className="d-flex align-items-center gap-3">
-          <img src={Profile} width="46" class="rounded-circle" alt="Profile" />
+          <img
+            src={Profile}
+            width="46"
+            className="rounded-circle"
+            alt="Profile"
+          />
           <div>{comments}</div>
         </div>
         <img

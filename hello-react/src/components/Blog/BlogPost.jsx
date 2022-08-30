@@ -10,22 +10,22 @@ export const BlogPost = ({ child, index }) => {
       style={{ width: "408px", height: "440px" }}
     >
       <div
-        class="card w-100 h-100 "
+        className="card w-100 h-100 "
         style={{ borderRadius: "30px", cursor: "pointer" }}
         onClick={() => navigate(`/Blog/${index}`)}
       >
         <img
-          class="card-img-top"
+          className="card-img-top"
           src={child.img}
           alt="Card image cap"
           style={{ borderRadius: "30px" }}
           height={"200px"}
         />
-        <div class="card-body">
-          <h5 class="card-title">{child.title}</h5>
-          <p class="card-text">{child.description}</p>
+        <div className="card-body">
+          <h5 className="card-title">{child.title}</h5>
+          <p className="card-text">{child.description}</p>
         </div>
-        <div class="card-body d-flex align-items-center gap-3">
+        <div className="card-body d-flex align-items-center gap-3">
           <img src={child.bottom[0]} alt="" width={40} />
           <div className="text-muted">{child.bottom[1]}</div>
           <div className="text-muted">{child.bottom[2]}</div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import {  WriteComment } from "../index";
-import MockData from "../MOCK_DATA.json";
+import { WriteComment } from "../index";
+import MockData from "../../Mock/MOCK_DATA.json";
 export const BlogDetail = () => {
   let { id } = useParams();
   const data = MockData[id];
@@ -9,7 +9,7 @@ export const BlogDetail = () => {
     <div>
       <div className="w-100 d-flex flex-column align-items-center my-5  gap-5 ">
         <div className="fs-1 fw-bold text-start ">{data.title}</div>
-        <div class="card-body d-flex align-items-center gap-3">
+        <div className="card-body d-flex align-items-center gap-3">
           <img src={data.bottom[0]} alt="" width={40} />
           <div className="text-muted">{data.bottom[1]}</div>
           <div className="text-muted">{data.bottom[2]}</div>

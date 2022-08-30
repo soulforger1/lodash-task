@@ -1,6 +1,6 @@
 import React from "react";
 import { BlogPost } from "../index";
-import MockData from "../MOCK_DATA.json";
+import MockData from "../../Mock/MOCK_DATA.json";
 
 export const Blogs = () => {
   return (
