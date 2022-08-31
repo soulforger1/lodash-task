@@ -12,7 +12,7 @@ export const BlogPost = ({ child, index }) => {
       <div
         className="card w-100 h-100 "
         style={{ borderRadius: "30px", cursor: "pointer" }}
-        onClick={() => navigate(`/Blog/${index}`)}
+        onClick={() => navigate(`/blog/${index}`)}
       >
         <img
           className="card-img-top"
