@@ -10,7 +10,7 @@ export const BlogPost = ({ child, index }) => {
       style={{ width: "408px", height: "440px" }}
     >
       <div
-        className="card w-100 h-100 "
+        className="card w-100 h-100 bg-dark "
         style={{ borderRadius: "30px", cursor: "pointer" }}
         onClick={() => navigate(`/blog/${index}`)}
       >

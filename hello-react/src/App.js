@@ -1,8 +1,13 @@
 import React from "react";
 import Router from "./routes";
+import { ThemeComponent } from "./theme";
 
 const App = () => {
-  return <Router />;
+  return (
+    <ThemeComponent>
+      <Router />
+    </ThemeComponent>
+  );
 };
 
 export default App;

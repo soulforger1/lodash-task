@@ -87,16 +87,24 @@ export const Footer = () => {
                 <input
                   className="ps-4"
                   type="text"
+<<<<<<< HEAD
+=======
+                  className="form-control"
+>>>>>>> 59f4ea0 (createContext useContext bootstrap theming)
                   placeholder="Email"
                   aria-label="Email"
                   aria-describedby="basic-addon2"
                   placeholdercolor="red"
+<<<<<<< HEAD
                   style={{
                     width: "100%",
                     height: "60px",
                     boxShadow: "none",
                     border: 0,
                   }}
+=======
+                  style={{ width: "100%", height: "60px", boxShadow: 'none', border: 0, }}
+>>>>>>> 59f4ea0 (createContext useContext bootstrap theming)
                 />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

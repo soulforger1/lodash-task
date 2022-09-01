@@ -1,8 +1,10 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import logo from "../assets/icon/team..svg";
+import { ColorModeContext } from "../theme";
 export const Header = () => {
+  const { handleChange, checked } = useContext(ColorModeContext);
+  console.log(checked);
   return (
     <Container>
       <div className="d-flex justify-content-between align-items-center pt-3 pb-3">
