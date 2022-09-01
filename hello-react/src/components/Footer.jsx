@@ -104,7 +104,6 @@ export const Footer = () => {
                   }}
 =======
                   style={{ width: "100%", height: "60px", boxShadow: 'none', border: 0, }}
->>>>>>> 59f4ea0 (createContext useContext bootstrap theming)
                 />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

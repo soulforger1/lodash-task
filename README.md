@@ -1,9 +1,11 @@
-# Nest Academy Level 2 curriculum project for React
+# Context
 
-## Guidance
+## Theming bootstrap
 
-Хичээлийн слайдыг бэлдэж жишээ кодыг repo дээр нэмэх ба үүний тулд тухайн өдрийн
-агуулгад хамаарах кодыг `b1-day1`, `b1-day2` мэтээр бранч үүсгэж кодыг push хийнэ.
+### Light Theme
 
-Энэ нь хичээл орох үед багш хичээлийн агуулгад хамаар жишээ код, прожектын кодыг
-уншиж хичээлийн бэлтгэл хангахад туслах ач холбогдолтой.
+<img width="1919" alt="image" src="https://user-images.githubusercontent.com/50545928/187826207-295c0a21-c6d6-404c-9824-2aee59e501e6.png">
+
+### Dark Theme
+
+<img width="1919" alt="image" src="https://user-images.githubusercontent.com/50545928/187826393-3fb10460-7ab6-427c-899b-e0f45d7efedf.png">
