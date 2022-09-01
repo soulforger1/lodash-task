@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { WriteComment } from "../index";
+import { WriteComment } from "../../components";
 import MockData from "../../Mock/MOCK_DATA.json";
 export const BlogDetail = () => {
   let { id } = useParams();
