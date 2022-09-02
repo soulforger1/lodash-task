@@ -29,7 +29,6 @@ const colorMode = (mode1, mode2) => {
     element.className = element.className.replace(re, `${mode2}`);
   });
   //card
-  console.log(document.querySelectorAll(`.card`));
   document.querySelectorAll(`.card`).forEach((element) => {
     element.className = element.className.replace(re, mode2);
   });
@@ -37,7 +36,7 @@ const colorMode = (mode1, mode2) => {
   document.querySelectorAll(`button`).forEach((element) => {
     element.className = element.className.replace(re, mode2);
   });
-  // text
+  //text
   if (document.body.classList.contains(`text-${mode2}`)) {
     document.body.classList.replace(`text-${mode2}`, `text-${mode1}`);
   } else {

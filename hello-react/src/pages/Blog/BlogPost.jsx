@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 export const BlogPost = ({ child, index }) => {
   let navigate = useNavigate();
+  // destructing object
+  const { id, tags, image, owner, publishDate, text } = child;
   return (
     <div
       className="flex gap-3 mt-3   "
@@ -12,23 +14,32 @@ export const BlogPost = ({ child, index }) => {
       <div
         className="card w-100 h-100 bg-light"
         style={{ borderRadius: "30px", cursor: "pointer" }}
-        onClick={() => navigate(`/blog/${index}`)}
+        onClick={() => navigate(`/blog/${id}`)}
       >
         <img
           className="card-img-top"
-          src={child.img}
+          src={image || ""}
           alt="Card image cap"
-          style={{ borderRadius: "30px" }}
+          style={{ borderRadius: "30px", objectFit: "cover" }}
           height={"200px"}
         />
         <div className="card-body">
-          <h5 className="card-title">{child.title}</h5>
-          <p className="card-text">{child.description}</p>
+          <h5 className="card-title">{tags + ""}</h5>
+          <p className="card-text">{text || ""}</p>
         </div>
         <div className="card-body d-flex align-items-center gap-3">
-          <img src={child.bottom[0]} alt="" width={40} />
-          <div className="text-muted">{child.bottom[1]}</div>
-          <div className="text-muted">{child.bottom[2]}</div>
+          <img
+            src={owner.picture}
+            alt=""
+            width={40}
+            style={{ borderRadius: "50%" }}
+          />
+          <div className="text-muted">
+            {owner?.firstName + " " + owner?.lastName} |
+          </div>
+          <div className="text-muted">
+            {new Date(publishDate).toDateString()}
+          </div>
         </div>
       </div>
     </div>

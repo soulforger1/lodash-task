@@ -3,8 +3,7 @@ import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { ColorModeContext } from "../theme";
 export const Header = () => {
-  const { handleChange, checked } = useContext(ColorModeContext);
-  console.log(checked);
+  const { handleChange } = useContext(ColorModeContext);
   return (
     <Container>
       <div className="d-flex justify-content-between align-items-center pt-3 pb-3">
