@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, HomebgHeader, Home1, Home2, Home3, ScrollCards } from "../components";
+import { HomebgHeader, Home1, Home2, Home3, ScrollCards } from "../components";
 
 export const Home = () => {
   return (
@@ -12,7 +12,6 @@ export const Home = () => {
         <h1 className="fw-bold">What people say about us</h1>
       </div>
       <ScrollCards />
-      <Footer />
     </div>
   );
 };

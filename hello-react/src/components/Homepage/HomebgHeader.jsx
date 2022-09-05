@@ -1,5 +1,5 @@
 import background from "../../assets/image/HomePageBG.png";
-import { HeaderHome } from "../../components";
+// import { HeaderHome } from "../../components";
 
 export const HomebgHeader = () => {
   return (
@@ -10,7 +10,6 @@ export const HomebgHeader = () => {
         backgroundImage: `url(${background})`,
       }}
     >
-      <HeaderHome />
       <div
         className="d-flex flex-column justify-content-center ps-10"
         style={{ width: "40%", height: "100%" }}

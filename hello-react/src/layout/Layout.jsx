@@ -1,17 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Footer, Header } from "../components";
-import Container from "react-bootstrap/Container";
 
 const Layout = () => {
+  const [offset, setOffset] = useState(0);
+  useEffect(() => {
+    const onScroll = () => setOffset(window.pageYOffset);
+    // clean up code
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  console.log(offset);
   return (
-    <div>
-      <Container>
+    <>
+      <div
+        style={{
+          position: "fixed",
+          width: "100%",
+          backgroundColor: offset !== 0 ? "#fff" : "transparent",
+          zIndex: 999,
+        }}
+      >
         <Header />
-        <Outlet />
-      </Container>
+      </div>
+      <Outlet />
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -6,12 +6,12 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<Layout />}>
+          <Route path="/home" element={<Home />} />
           <Route path="/blog" element={<Blogs />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
         </Route>
-        <Route path="/" element={<Home />} />
         <Route path="/login" element={<LogIn />} />
       </Routes>
     </BrowserRouter>
