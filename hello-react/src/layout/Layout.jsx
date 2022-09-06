@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Footer, Header } from "../components";
+import { ColorModeContext } from "../theme";
 
 const Layout = () => {
+  const { checked } = useContext(ColorModeContext);
   const [offset, setOffset] = useState(0);
   useEffect(() => {
     const onScroll = () => setOffset(window.pageYOffset);
@@ -19,7 +21,8 @@ const Layout = () => {
         style={{
           position: "fixed",
           width: "100%",
-          backgroundColor: offset !== 0 ? "#fff" : "transparent",
+          backgroundColor:
+            offset !== 0 ? (checked ? "#fff" : "#212529") : "transparent",
           zIndex: 999,
         }}
       >

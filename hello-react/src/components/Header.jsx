@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { ColorModeContext } from "../theme";
@@ -8,10 +8,27 @@ export const Header = () => {
   return (
     <Container>
       <div className="d-flex justify-content-between align-items-center pt-3 pb-3">
-        <Link to="/home">
-          <img src={logo} alt="" />
-        </Link>
+        <p
+          style={{
+            textDecoration: "none",
+            fontFamily: "inherit",
+            fontWeight: 800,
+            fontSize: "30px",
+            lineHeight: "38px",
+          }}
+        >
+          team.
+        </p>
         <div className="d-flex gap-4  align-items-center">
+          <div class="form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckDefault"
+              onChange={handleChange}
+            />
+          </div>
           <Link to="/home" className="text-muted">
             Home
           </Link>
