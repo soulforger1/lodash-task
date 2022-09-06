@@ -1,9 +1,6 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { WriteComment } from "../index";
-// import MockData from "../../Mock/MOCK_DATA.json";
-import { useEffect } from "react";
-import { useState } from "react";
+import { WriteComment } from "..";
 export const BlogDetail = () => {
   const [postDetail, setPostDetail] = useState({
     image: "",
@@ -36,50 +33,49 @@ export const BlogDetail = () => {
   // destructing object
   const { image, owner, publishDate, tags, text } = postDetail;
   return (
-    <div>
-      <div className="w-100 d-flex flex-column align-items-center my-5  gap-5 ">
-        <div className="fs-1 fw-bold text-start ">{tags + ""}</div>
-        <div className="card-body d-flex align-items-center gap-3">
-          <img
-            src={owner.picture}
-            alt={owner.firstName}
-            width={56}
-            style={{ borderRadius: "50%" }}
-          />
-          <div className="text-muted">
-            {owner.firstName + " " + owner.lastName}
-          </div>
-          <div className="text-muted">
-            {new Date(publishDate).toDateString()}
-          </div>
-        </div>
+    <div
+      className="w-100 d-flex flex-column align-items-center gap-5 "
+      style={{ paddingTop: 90 }}
+    >
+      <div className="fs-1 fw-bold text-start ">{tags + ""}</div>
+      <div className="card-body d-flex align-items-center gap-3">
         <img
-          src={image}
-          alt=""
-          style={{
-            maxWidth: 900,
-            width: "100%",
-            objectFit: "cover",
-            height: 450,
-          }}
+          src={owner.picture}
+          alt={owner.firstName}
+          width={56}
+          style={{ borderRadius: "50%" }}
         />
-        <div className="w-50 ">{text}</div>
-        <div className="d-flex gap-3">
-          <img
-            src={owner.picture}
-            alt={owner.firstName}
-            width={56}
-            style={{ borderRadius: "50%" }}
-          />
-          <div className="d-flex flex-column lh-2">
-            <div className="fs-6 fw-lighter">written by</div>
-            <div>
-              {owner.firstName} {owner.lastName}
-            </div>
+        <div className="text-muted">
+          {owner.firstName + " " + owner.lastName}
+        </div>
+        <div className="text-muted">{new Date(publishDate).toDateString()}</div>
+      </div>
+      <img
+        src={image}
+        alt=""
+        style={{
+          maxWidth: 900,
+          width: "100%",
+          objectFit: "cover",
+          height: 450,
+        }}
+      />
+      <div className="w-50 ">{text}</div>
+      <div className="d-flex gap-3">
+        <img
+          src={owner.picture}
+          alt={owner.firstName}
+          width={56}
+          style={{ borderRadius: "50%" }}
+        />
+        <div className="d-flex flex-column lh-2">
+          <div className="fs-6 fw-lighter">written by</div>
+          <div>
+            {owner.firstName} {owner.lastName}
           </div>
         </div>
-        <WriteComment />
       </div>
+      <WriteComment />
     </div>
   );
 };

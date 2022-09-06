@@ -1,4 +1,5 @@
 export * from "./Header";
-export * from "./Comment/index";
-export * from "./Footer";
 export * from "./Homepage";
+export * from "./Blog";
+export * from "./Comment";
+export * from "./Footer";
