@@ -77,7 +77,7 @@ export const BlogDetail = () => {
           </div>
         </div>
       </div>
-      <WriteComment />
+      <WriteComment id={id}/>
     </div>
   );
 };
