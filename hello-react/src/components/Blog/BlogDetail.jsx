@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { WriteComment } from "..";
 export const BlogDetail = () => {
   const [postDetail, setPostDetail] = useState({
@@ -9,6 +9,7 @@ export const BlogDetail = () => {
     tags: "",
     text: "",
   });
+  const navigate = useNavigate();
   let { id } = useParams();
   useEffect(() => {
     const fetchPosts = async () => {
@@ -44,6 +45,7 @@ export const BlogDetail = () => {
           alt={owner.firstName}
           width={56}
           style={{ borderRadius: "50%" }}
+          onClick={() => navigate(`/user/${owner.id}`)}
         />
         <div className="text-muted">
           {owner.firstName + " " + owner.lastName}

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import { useNavigate } from "react-router-dom";
 
-export const BlogPost = ({ child, index }) => {
+export const BlogPost = ({ child }) => {
   let navigate = useNavigate();
   // destructing object
   const { id, tags, image, owner, publishDate, text } = child;
@@ -13,9 +13,9 @@ export const BlogPost = ({ child, index }) => {
       <div
         className="card w-100 h-100 bg-light"
         style={{ borderRadius: "30px", cursor: "pointer" }}
-        onClick={() => navigate(`/blog/${id}`)}
       >
         <img
+          onClick={() => navigate(`/blog/${id}`)}
           className="card-img-top"
           src={image || ""}
           alt="Card image cap"
@@ -32,6 +32,7 @@ export const BlogPost = ({ child, index }) => {
             alt=""
             width={40}
             style={{ borderRadius: "50%" }}
+            onClick={() => navigate(`/user/${owner.id}`)}
           />
           <div className="text-muted">
             {owner?.firstName + " " + owner?.lastName} |
