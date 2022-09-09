@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ToastContext } from "../../provider";
 import { instance } from "../../utils/axios/custom";
 export const ReadComment = ({ comment }) => {
   const { id, message, owner, publishDate } = comment;
   //http://localhost:3000/blog/60d21af267d0d8992e610b8d this "id" had comments
+  const { handleOpenToast } = useContext(ToastContext);
   return (
     <div>
       <div className="d-flex align-items-center justify-content-between px-2 gap-3 my-2 ml-4 border-bottom w-100 py-3">
@@ -27,9 +29,10 @@ export const ReadComment = ({ comment }) => {
             alt=""
             width="20px"
             style={{ cursor: "pointer" }}
-            onClick={() => {
-              deleteComment(id);
-              alert("Successfully deleted");
+            onClick={async () => {
+              await deleteComment(id);
+              window.location.reload();
+              handleOpenToast("Амжилттай устгалаа!");
             }}
           />
         )}

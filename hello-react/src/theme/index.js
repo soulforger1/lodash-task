@@ -28,6 +28,10 @@ const colorMode = (mode1, mode2) => {
   document.querySelectorAll(`.navbar-${mode1}`).forEach((element) => {
     element.className = element.className.replace(re, `${mode2}`);
   });
+  //toast
+  document.querySelectorAll(`.bg-${mode1}`).forEach((element) => {
+    element.className = element.className.replace(re, `${mode2}`);
+  });
   //card
   document.querySelectorAll(`.card`).forEach((element) => {
     element.className = element.className.replace(re, mode2);

@@ -21,7 +21,7 @@ const Layout = () => {
           width: "100%",
           backgroundColor:
             offset !== 0 ? (checked ? "#fff" : "#212529") : "transparent",
-          zIndex: 999,
+          zIndex: 1,
         }}
       >
         <Header />

@@ -22,6 +22,7 @@ export const WriteComment = ({ id }) => {
     // block auto reload page
     event.preventDefault();
     await postComment(id, comment);
+    setComment("");
   };
   return (
     <div>

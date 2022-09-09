@@ -1,11 +1,14 @@
 import React from "react";
+import { ToastProvider } from "./provider";
 import Router from "./routes";
 import { ThemeComponent } from "./theme";
 
 const App = () => {
   return (
     <ThemeComponent>
-      <Router />
+      <ToastProvider>
+        <Router />
+      </ToastProvider>
     </ThemeComponent>
   );
 };

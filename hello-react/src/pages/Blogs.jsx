@@ -9,7 +9,7 @@ export const Blogs = () => {
     const fetchPosts = async () => {
       try {
         const res = await instance.get("post");
-        setPosts(res.data.data);
+        setPosts(res?.data?.data || []);
       } catch (error) {
         console.log(error.message);
       }
