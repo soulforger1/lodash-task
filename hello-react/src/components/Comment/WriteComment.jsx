@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ReadComment } from "./index";
 import Profile from "../../assets/icon/Profile.svg";
-import axios from "axios";
+import { instance } from "../../utils/axios/custom";
 export const WriteComment = ({ id }) => {
   const [allComment, setAllComment] = useState([]);
   const [comment, setComment] = useState("");
@@ -9,30 +9,23 @@ export const WriteComment = ({ id }) => {
   useEffect(() => {
     const getUserData = async () => {
       try {
-        const res = await axios.get(
-          `https://dummyapi.io/data/v1/post/${id}/comment`,
-          {
-            headers: {
-              "Content-type": "application/json; charset=UTF-8",
-              // use your own app-id of dummy api
-              "app-id": "63104c3120f6e665ecf628ba",
-            },
-          }
-        );
-        setAllComment(res.data.data);
+        const res = await instance.get(`/post/${id}/comment`);
+        setAllComment(res?.data?.data || []);
       } catch (error) {
-        console.log(error.message);
+        console.log(error);
       }
     };
     // called here
     getUserData();
   }, [id]);
-  const submitComment = async () => {
+  const submitComment = async (event) => {
+    // block auto reload page
+    event.preventDefault();
     await postComment(id, comment);
   };
   return (
     <div>
-      {allComment.map((comment, index) => {
+      {allComment?.map((comment, index) => {
         return <ReadComment key={index} comment={comment} />;
       })}
       <div className="text-muted h4">Join the conversation</div>
@@ -44,7 +37,6 @@ export const WriteComment = ({ id }) => {
             className="rounded-circle"
             alt="Profile"
           />
-
           <textarea
             required
             type="text"
@@ -63,24 +55,13 @@ export const WriteComment = ({ id }) => {
 
 const postComment = async (id, comment) => {
   try {
-    await axios.post(
-      `https://dummyapi.io/data/v1/comment/create`,
-
-      {
-        post: id,
-        //this is static id because we don't have auth user
-        owner: "60d0fe4f5311236168a109df",
-        publishDate: new Date(),
-        message: comment,
-      },
-      {
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          // use your own app-id of dummy api
-          "app-id": "63104c3120f6e665ecf628ba",
-        },
-      }
-    );
+    await instance.post(`comment/create`, {
+      post: id,
+      //this is static id because we don't have auth user
+      owner: "60d0fe4f5311236168a109df",
+      publishDate: new Date(),
+      message: comment,
+    });
   } catch (error) {
     console.log(error);
   }

@@ -15,6 +15,7 @@ const Router = () => {
           <Route path="/user/:id" element={<Profile />} />
         </Route>
         <Route path="/login" element={<LogIn />} />
+        <Route path="*" element={<h1>NOT FOUND</h1>} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,5 +1,5 @@
-import axios from "axios";
 import React from "react";
+import { instance } from "../../utils/axios/custom";
 export const ReadComment = ({ comment }) => {
   const { id, message, owner, publishDate } = comment;
   //http://localhost:3000/blog/60d21af267d0d8992e610b8d this "id" had comments
@@ -39,13 +39,7 @@ export const ReadComment = ({ comment }) => {
 };
 const deleteComment = async (id) => {
   try {
-    await axios.delete(`https://dummyapi.io/data/v1/comment/${id}`, {
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-        // use your own app-id of dummy api
-        "app-id": "63104c3120f6e665ecf628ba",
-      },
-    });
+    await instance.delete(`/comment/${id}`);
   } catch (error) {
     console.log(error);
   }
